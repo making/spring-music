@@ -6,12 +6,16 @@ plugins {
     id 'idea'
 }
 
-repositories {
-    mavenCentral()
+ext {
+    springCloudBindingsVersion = "1.8.1"
 }
 
-ext {
-    javaCfEnvVersion = '2.4.0'
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'https://repo.spring.io/release' }
 }
 
 dependencies {
@@ -23,8 +27,8 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-data-redis"
     implementation "org.springframework.boot:spring-boot-starter-validation"
 
-    // Java CfEnv
-    implementation "io.pivotal.cfenv:java-cfenv-boot:${javaCfEnvVersion}"
+    // Spring Cloud Bindings
+    compileOnly "org.springframework.cloud:spring-cloud-bindings:${springCloudBindingsVersion}"
 
     // JPA Persistence
     runtimeOnly "org.apache.commons:commons-pool2"
