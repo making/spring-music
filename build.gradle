@@ -27,6 +27,8 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-data-redis"
     implementation "org.springframework.boot:spring-boot-starter-validation"
 
+    implementation "org.apache.commons:commons-collections4:4.0"
+
     // Spring Cloud Bindings
     compileOnly "org.springframework.cloud:spring-cloud-bindings:${springCloudBindingsVersion}"
 
